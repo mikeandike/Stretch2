@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "NameConnector.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) NameConnector *nameConnector;
 
 @end
 
@@ -17,6 +20,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.nameConnector = [NameConnector new];
+    
+    NSLog(@"Hello, %@", [NameConnector connectName:@"Michael" :@"Sacks"]);
+    
+    
     return YES;
 }
 
